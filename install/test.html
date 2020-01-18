@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>安装程序</title>
+<script type="text/javascript" src="../public/js/jquery-3.4.1.min.js"></script>
+<link rel="stylesheet" href="../public/layui/css/layui.css">
+<script src="../public/layui/layui.js"></script>
+<style type="text/css">
+body{background:#fff}
+.cl{zoom:1}
+.cl:after{content:'\20';display:block;height:0;clear:both;visibility:hidden}
+.z{float:left}
+.y{float:right}
+.header{background:#0b0c0c;height:60px;width:100%;position:fixed;left:0;top:0;z-index:999}
+.header a{font-size:18px;padding:0 30px 0 0;line-height:60px;font-weight:100;color:#fff}
+.header h2{font-size:18px;padding:0 0 0 30px;line-height:60px;font-weight:100;color:#fff}
+.header a:hover{color:#fff}
+.admin{background:#fff;min-height:100%;width:100%}
+.aleft{position:fixed;left:0;top:60px;width:200px;height:100%;background:#fff;border-right:1px solid #EAEAEA}
+.aright{margin-left:200px;margin-top:80px}
+.bform{margin:20px 30px 0 10px}
+.aright .arz a{color:#fff;padding:10px 18px;background:#0b0c0c;height:36px;line-height:36px;border-radius:2px}
+.aright .arz a i{position:relative;right:3px;top:1px}
+.aright .arz{margin:20px 0 0 30px}
+.aright .arz a:hover{opacity:.8;filter:alpha(opacity=80);color:#fff}
+.aform tr{border:1px solid #EAEAEA}
+.aform tr th{border-left:1px solid #EAEAEA;background:#F9F9F9;line-height:45px}
+.aform tr td{border-left:1px solid #EAEAEA;line-height:40px}
+.aform{margin:20px 30px 0 30px}
+.aleft h3{font-size:16px;padding:15px 30px;font-weight:100;color:#333;border-bottom:1px solid #EAEAEA;background:#F9F9F9}
+.aleft ul li{padding:12px 0 12px 50px;float:left;color:#333;width:150px;border-bottom:1px solid #EAEAEA}
+.aleft ul li a:hover{color:#0b0c0c}
+.aleft ul li i{position:relative;right:3px;top:1px;color:#0b0c0c}
+.sort-input{width:25px;text-align:center}
+.file-box img{margin-top:15px}
+.file-box{position:relative;width:800px}
+.file-txt{width:660px;height:36px;line-height:36px;background:#fff;border:0 solid #fff;padding-left:5px}
+.file-box i{position:absolute;left:16px;top:11px;font-size:16px;color:#5FB878}
+.file-btn:hover{border-color:#D2D2D2!important}
+.file-btn{width:110px;height:36px;line-height:36px;background:#fff;border:1px solid #e6e6e6;padding-left:15px;border-radius:2px}
+.file-file{position:absolute;top:0;left:0;height:36px;filter:alpha(opacity:0);opacity:0;width:110px}
+.pages{float:left;margin:20px 30px 0 30px}
+.pages .current,.pages a,.pages a:hover{display:inline-block;height:28px;line-height:28px;vertical-align:middle}
+.pages a{color:#333;background-color:#f0f0f0}
+.pages .current,.pages a:hover{text-decoration:none;color:#FFF;background-color:#009688;vertical-align:middle}
+.pages .next,.pages .prev{padding:0 15px;font-family:"宋体"}
+.pages .current,.pages .num{margin:0 3px;padding:0 11px}
+#login{background:#0b0c0c}
+.login{width:260px;margin-top:200px!important;margin:0 auto;background:#fff;padding:60px 80px}
+.login h2{font-size:28px;font-weight:100;color:#333;text-align:center;margin-bottom:50px}
+.aright_1{margin:20px 30px 0 30px}
+.aright_1 tr{font-size:13px;line-height:38px;border-bottom:1px solid #EAEAEA}
+.aright_1 table{margin-bottom:10px}
+.aright_1 tr:last-child{border:none}
+.inside{width:100%;min-width:1000px;height:65px;background: #0a0a0a;}
+.inside h2 img{float:left;padding:0}
+.inside ul{width:120px;height:65px;float:left;margin-left:68px}
+.inside .innumber1{background:#FF5722!important;color:#fff!important}
+.inside .innumber{margin-top:12px;width:40px;height:40px;line-height:40px;text-align:center;font-size:20px;border-radius:50%;background:#fff;float:left;color:#009688}
+.inside .inword{width:80px;height:65px;float:left;line-height:65px;text-indent:10px;font-size:16px;color:#fff}
+.inwp{width:1000px;margin:0 auto}
+.inout1 a{float:left;border:1px solid #C9C9C9;background-color:#fff;color:#555;padding:8px 18px;border-radius:2px;margin-right:10px;margin-top:20px}
+.inout2 a{float:left;color:#fff;padding:9px 18px;background: #0b0c0c;border-radius:2px;margin-top:20px;}
+.inout1 a:hover{color:#555;opacity:.8;filter:alpha(opacity=80)}
+.inout2 a:hover{color:#fff;opacity:.8;filter:alpha(opacity=80)}
+.inout2 input{float:left;color:#fff;padding:9px 18px;background:#0b0c0c;border-radius:2px;margin-top:20px;border:none}
+.inout2 input:hover{color:#fff;opacity:.8;filter:alpha(opacity=80)}
+.inside2 h2{font-size:20px;margin:20px 0}
+.inside2 h3{font-size:16px;margin:20px 0 10px 0;color:#FF5722}
+.inside2 p{font-size:14px;line-height:28px;margin-bottom:10px}
+.inside2 tr{border:1px solid #EAEAEA}
+.inside2 tr th{border-left:1px solid #EAEAEA;background:#F9F9F9;line-height:45px}
+.inside2 tr td{border-left:1px solid #EAEAEA;line-height:40px;padding-left:20px}
+.layui-form-pane .layui-form-label{width:132px!important}
+.layui-form-pane .layui-input-block{margin-left:132px!important}
+</style>
+<script>
+function testClick(){
+    if($('.yes').length!=6){
+        alert('您的配置或权限不符合要求');
+    }else{
+        location.href='./index.php?c=create';
+    }
+}
+</script>
+</head>
+<body>
+<div class="inside">
+      <div class="inwp cl">  
+		<h2><a href="../install/index.php"><img src="../public/img/logo.png" alt="思维实验"></a></h2>
+        <ul>
+            <li class="innumber">1</li>
+            <li class="inword">使用协议</li>
+        </ul>
+        <ul>
+            <li class="innumber innumber1">2</li>
+            <li class="inword">环境检测</li>
+        </ul>
+        <ul>
+            <li class="innumber">3</li>
+            <li class="inword">创建数据</li>
+        </ul>
+        <ul>
+            <li class="innumber">4</li>
+            <li class="inword">安装完成</li>
+        </ul>
+    </div>
+</div>
+<div class="inside2">
+   <div class="inwp cl">
+            <h2>环境检测：</h2>
+            <table width="100%">
+                <tr>
+                    <th width="25%">坏境</th>
+                    <th width="25%">最低配置</th>
+                    <th width="25%">当前配置</th>
+                    <th width="25%">是否符合</th>
+                </tr>
+                <tr>
+                    <td>操作系统</td>
+                    <td>不限</td>
+                    <td><?php echo php_uname('s'); ?></td>
+                    <td class="yes">√</td>
+                </tr>
+                <tr>
+                    <td>php版本</td>
+                    <td>&gt;5.4</td>
+                    <td><?php echo PHP_VERSION ?></td>
+                    <?php $php_version=explode('.', PHP_VERSION); ?>
+                    <td class="<?php if(($php_version['0']>=7) || ($php_version['0']>=5 && $php_version['1']>=3))echo 'yes'; ?>">
+                        <?php if (($php_version['0']>=7) || ($php_version['0']>=5 && $php_version['1']>=4)): ?>
+                            √
+                        <?php else: ?>
+                            ×
+                        <?php endif ?>
+                    </td>
+                </tr>
+            </table>
+            <h2>目录权限：</h2>
+            <table width="100%">
+                <tr>
+                    <th width="25%">坏境</th>
+                    <th width="25%">最低配置</th>
+                    <th width="25%">当前配置</th>
+                    <th width="25%">是否符合</th>
+                </tr>
+                <tr>
+                    <td>./Uploads</td>
+                    <td>可写</td>
+                    <td>
+                        <?php if (is_writable('../uploads')): ?>
+                            可写
+                        <?php else: ?>
+                            不可写
+                        <?php endif ?>
+                    </td>
+                    <td class="<?php if(is_writable('../uploads'))echo 'yes'; ?>">
+                        <?php if (is_writable('../uploads')): ?>
+                            √
+                        <?php else: ?>
+                            ×
+                        <?php endif ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>./Runtime</td>
+                    <td>可写</td>
+                    <td>
+                        <?php if (is_writable('../runtime')): ?>
+                            可写
+                        <?php else: ?>
+                            不可写
+                        <?php endif ?>
+                    </td>
+                    <td class="<?php if(is_writable('../runtime'))echo 'yes'; ?>">
+                        <?php if (is_writable('../runtime')): ?>
+                            √
+                        <?php else: ?>
+                            ×
+                        <?php endif ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>./install</td>
+                    <td>可写</td>
+                    <td>
+                        <?php if (is_writable('../install')): ?>
+                            可写
+                        <?php else: ?>
+                            不可写
+                        <?php endif ?>
+                    </td>
+                    <td class="<?php if(is_writable('../install'))echo 'yes'; ?>">
+                        <?php if (is_writable('../install')): ?>
+                            √
+                        <?php else: ?>
+                            ×
+                        <?php endif ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>./application</td>
+                    <td>可写</td>
+                    <td>
+                        <?php if (is_writable('../application')): ?>
+                            可写
+                        <?php else: ?>
+                            不可写
+                        <?php endif ?>
+                    </td>
+                    <td class="<?php if(is_writable('../application'))echo 'yes'; ?>">
+                        <?php if (is_writable('../application')): ?>
+                            √
+                        <?php else: ?>
+                            ×
+                        <?php endif ?>
+                    </td>
+                </tr>
+            </table>
+			<div class="inout1">
+			<a href="./index.php?c=agreement">上一步</a>
+		    </div>
+		    <div class="inout2">
+			<a href="javascript:;" onclick="testClick()">下一步</a>
+		    </div>
+   </div>
+</div>
+</body>
+</html>
